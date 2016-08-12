@@ -1,3 +1,4 @@
+
 Introduction
 ============
 
@@ -13,7 +14,7 @@ Rumal is in active development and currently has support for the following featu
 - Multiple sharing modes: Private, Public and within Groups
 - Bookmark Public and your own Scans.
 - Code highlighting for stored code using Google Code Prettify
-- Enrichment daemon couple with a simple plugin development APi to allow extension as needed.
+- Enrichment daemon couple with a simple plugin development API to allow extension as needed.
 - Social elements: Commenting on a specific node in the scan tree, modifying sharing modes of scans and adding tags to scans.
 - Advanced searching scans available to view with our custom query language.
 

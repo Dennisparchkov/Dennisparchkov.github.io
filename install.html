@@ -97,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="social.html">Rumal Social</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advancedsearch.html">Advanced Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
 </ul>
 
             
@@ -164,7 +165,13 @@ $ <span class="nb">source</span> venv/bin/activate
 </pre></div>
 </div>
 <p>That&#8217;s all. The first command will create a folder named venv, with a copy of the Python executable, pip and some other tools; the second command will activate the virtual environment for you. From now on, every time you run pip install, the requested modules will be installed locally, without touching your global Python environment. When you&#8217;re done with Rumāl, just run deactivate to exit from venv. Please also consider using <a class="reference external" href="https://github.com/kennethreitz/autoenv">Autoenv</a> to automatically activate your virtual environment every time you enter the folder (and to automatically deactivate it when you leave).</p>
-<p>Now, you can install Rumāl&#8217;s dependencies by running the following command from Rumāl&#8217;s root directory. WARNING: Rumāl requires specific versions of some libraries such as Django 1.9. If you&#8217;ve got other projects running on the same box, please consider using VirtualEnv (see above) if you didn&#8217;t already!</p>
+<p>Now, you can install Rumāl&#8217;s dependencies by running the following command from Rumāl&#8217;s root directory.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>WARNING: Rumāl requires specific versions of some libraries such as Django 1.9. If you&#8217;ve got other projects running on the same box, please consider using VirtualEnv (see above) if you didn&#8217;t already!</li>
+</ul>
+</div>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
 </pre></div>
 </div>
@@ -175,12 +182,12 @@ $ python manage.py createsuperuser
 </pre></div>
 </div>
 <p><strong>Basic configuration:</strong></p>
-<p>Before running Rumāl&#8217;s front-end, you will need to let it know how to reach the back-end&#8217;s. Rumal back-end requires its own config file. To find out what fields are required in the config files, please refer to <a class="reference internal" href="architecture.html#config-label"><span class="std std-ref">Communication Configuration</span></a></p>
+<p>Before running Rumāl&#8217;s front-end, you will need to let it know how to reach the back-end. Rumal back-end requires its own config file. To find out what fields are required in the config files, please refer to <a class="reference internal" href="architecture.html#config-label"><span class="std std-ref">Communication Configuration</span></a></p>
 <p>you will need to configure the front-end by creating a new configuration file by running (from the front-end&#8217;s root):</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ cp conf/backend.conf.example conf/backend.conf
 </pre></div>
 </div>
-<p>You will need to specify the location the of master backend for the host field and a list available backend&#8217;s in the BE field, this is used to post tasks on private queues to a specific backend.</p>
+<p>You will need to specify the location of the master backend for the host field and a list available backend&#8217;s in the BE field, this is used to post tasks on private queues to a specific backend.</p>
 <p>You should also make sure that the Mongo Daemon is running, you can start it like so:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ mongod
 </pre></div>
@@ -215,8 +222,18 @@ $ python manage.py enrich &gt; /dev/null 2&gt;<span class="p">&amp;</span><span 
 </ul>
 <p>You can find a list of required python modules in requirements.txt</p>
 <p><strong>Docker:</strong></p>
-<p>Please keep in mind that Rumal will need to use sudo to run Docker, so please make sure the user running the backend can use sudo docker with no password. For example, consider adding this line to your /etc/sudoers (always use visudo when editing sudoers):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>myuser <span class="nv">ALL</span><span class="o">=(</span>root<span class="o">)</span> NOPASSWD: /usr/bin/docker
+<p>Please keep in mind that Rumal will need to use sudo to run Docker, so please make sure the user running the backend can use sudo docker with no password. To do so, create a  Unix group called docker and add your user to it. Refer to the <a class="reference external" href="https://docs.docker.com/v1.8/installation/ubuntulinux/#create-a-docker-group">docker pages</a> if you are having problems running docker without sudo.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ sudo usermod -aG docker USER
+</pre></div>
+</div>
+<p>Replace USER with the user&#8217;s name you wish to add to the docker group.</p>
+<p>Log out and log back in.</p>
+<p>To verify if it has worked, open up a terminal and run :</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker ps -a
+</pre></div>
+</div>
+<p>If this fails with a message similar to this:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>Cannot connect to the Docker daemon. Is <span class="s1">&#39;docker daemon&#39;</span> running on this host?
 </pre></div>
 </div>
 <p><strong>MongoDB:</strong></p>
@@ -244,7 +261,13 @@ $ virtualenv venv
 $ <span class="nb">source</span> venv/bin/activate
 </pre></div>
 </div>
-<p>Now, you can install Rumāl back-end&#8217;s own dependencies by running the following command from the root directory. WARNING: Rumāl&#8217;s backend requires specific versions of some libraries such as Django 1.9. If you&#8217;ve got other projects running on the same box, please consider using VirtualEnv (see above) if you didn&#8217;t already!</p>
+<p>Now, you can install Rumāl back-end&#8217;s own dependencies by running the following command from the root directory.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<ul class="last simple">
+<li>WARNING: Rumāl&#8217;s backend requires specific versions of some libraries such as Django 1.9. If you&#8217;ve got other projects running on the same box, please consider using VirtualEnv (see above) if you didn&#8217;t already!</li>
+</ul>
+</div>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ pip install -r requirements.txt
 </pre></div>
 </div>
@@ -256,7 +279,7 @@ $ python manage.py createsuperuser
 </div>
 <p><strong>Basic configuration:</strong></p>
 <p>Before running Rumāl&#8217;s back-end, you will need to let it know where to find the ANY queue. If this is your only instance of the backend you can put localhost. If you have another instance of the backend running which has this queue you should put its IP address. Tasks posted on the any queue will be picked up by the first available backend</p>
-<p>You will need to create the back-end;s configuration file:</p>
+<p>You will need to create the back-end’s configuration file:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ cp conf/backend.conf.example conf/backend.conf
 </pre></div>
 </div>
@@ -296,7 +319,7 @@ $ python manage.py createsuperuser
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015, Pietro Delsante, Tarun Kumar.
+        &copy; Copyright 2014-2016 Rumal Developers.
 
     </p>
   </div>

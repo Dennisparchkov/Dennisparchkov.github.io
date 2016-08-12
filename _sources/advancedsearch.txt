@@ -6,10 +6,10 @@ Advanced Search
 Usage
 -------
 
-This feature allows users to build complex queries to search among all scan available for that user. It will search among all pulbic scans, user's private scans and among scans within user's groups.
-The search is done among Mongodb fields returned by Thug. 
+This feature allows users to build complex queries to search among all scan available for that user. It will search among all public scans, user's private scans and among scans within user's groups.
+The search is done among Mongo dB fields returned by Thug. 
 
-This feature is still in ongoing developement.
+This feature is still in ongoing development.
 
 
 Combine your queries with logical operators and/or and parentheses to build complex queries.
@@ -30,7 +30,7 @@ The advanced search currently supports the following fields:
 Useable Operators
 ------------------
 
-Typing your search with no operators will perfomr the seach among all text fields. (eg. google ).
+Typing your search with no operators will perform the search among all text fields. (eg. google ).
 
 
 - <field> = <value> Contains

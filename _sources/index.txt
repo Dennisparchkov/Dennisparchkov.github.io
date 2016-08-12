@@ -28,6 +28,7 @@ User Guide:
    social
    advancedsearch
    plugins
+   development
 
 
 

@@ -38,7 +38,11 @@ Actually, you only need sudo if you're installing virtualenv globally (which I s
 That's all. The first command will create a folder named venv, with a copy of the Python executable, pip and some other tools; the second command will activate the virtual environment for you. From now on, every time you run pip install, the requested modules will be installed locally, without touching your global Python environment. When you're done with Rumāl, just run deactivate to exit from venv. Please also consider using `Autoenv <https://github.com/kennethreitz/autoenv>`_ to automatically activate your virtual environment every time you enter the folder (and to automatically deactivate it when you leave).
 
 
-Now, you can install Rumāl's dependencies by running the following command from Rumāl's root directory. WARNING: Rumāl requires specific versions of some libraries such as Django 1.9. If you've got other projects running on the same box, please consider using VirtualEnv (see above) if you didn't already!
+Now, you can install Rumāl's dependencies by running the following command from Rumāl's root directory. 
+
+.. warning::
+
+	- WARNING: Rumāl requires specific versions of some libraries such as Django 1.9. If you've got other projects running on the same box, please consider using VirtualEnv (see above) if you didn't already!
 
 .. code-block:: bash
 
@@ -54,7 +58,7 @@ Now you can setup the database (which, for now, uses SQLite as the backend) and 
 
 **Basic configuration:**
 
-Before running Rumāl's front-end, you will need to let it know how to reach the back-end's. Rumal back-end requires its own config file. To find out what fields are required in the config files, please refer to :ref:`config-label`
+Before running Rumāl's front-end, you will need to let it know how to reach the back-end. Rumal back-end requires its own config file. To find out what fields are required in the config files, please refer to :ref:`config-label`
  
 you will need to configure the front-end by creating a new configuration file by running (from the front-end's root):
 
@@ -62,7 +66,7 @@ you will need to configure the front-end by creating a new configuration file by
 
 	$ cp conf/backend.conf.example conf/backend.conf
 
-You will need to specify the location the of master backend for the host field and a list available backend's in the BE field, this is used to post tasks on private queues to a specific backend.
+You will need to specify the location of the master backend for the host field and a list available backend's in the BE field, this is used to post tasks on private queues to a specific backend.
 
 
 
@@ -120,11 +124,28 @@ You can find a list of required python modules in requirements.txt
 
 **Docker:**
 
-Please keep in mind that Rumal will need to use sudo to run Docker, so please make sure the user running the backend can use sudo docker with no password. For example, consider adding this line to your /etc/sudoers (always use visudo when editing sudoers):
+Please keep in mind that Rumal will need to use sudo to run Docker, so please make sure the user running the backend can use sudo docker with no password. To do so, create a  Unix group called docker and add your user to it. Refer to the `docker pages <https://docs.docker.com/v1.8/installation/ubuntulinux/#create-a-docker-group>`_ if you are having problems running docker without sudo.
+
 
 .. code-block:: bash
 
-	myuser ALL=(root) NOPASSWD: /usr/bin/docker
+	$ sudo usermod -aG docker USER
+
+Replace USER with the user's name you wish to add to the docker group.
+
+Log out and log back in.
+
+To verify if it has worked, open up a terminal and run :
+
+.. code-block:: bash
+	
+	$ docker ps -a
+
+If this fails with a message similar to this:
+
+.. code-block:: bash
+
+	Cannot connect to the Docker daemon. Is 'docker daemon' running on this host?
 
 **MongoDB:**
 
@@ -164,7 +185,11 @@ Actually, you only need sudo if you're installing virtualenv globally (which I s
 	$ virtualenv venv
 	$ source venv/bin/activate
 
-Now, you can install Rumāl back-end's own dependencies by running the following command from the root directory. WARNING: Rumāl's backend requires specific versions of some libraries such as Django 1.9. If you've got other projects running on the same box, please consider using VirtualEnv (see above) if you didn't already!
+Now, you can install Rumāl back-end's own dependencies by running the following command from the root directory. 
+
+.. warning::
+
+	- WARNING: Rumāl's backend requires specific versions of some libraries such as Django 1.9. If you've got other projects running on the same box, please consider using VirtualEnv (see above) if you didn't already!
 
 
 .. code-block:: bash
@@ -184,7 +209,7 @@ Now you can setup the database (which, for now, uses SQLite as the backend) and 
 
 Before running Rumāl's back-end, you will need to let it know where to find the ANY queue. If this is your only instance of the backend you can put localhost. If you have another instance of the backend running which has this queue you should put its IP address. Tasks posted on the any queue will be picked up by the first available backend
 
-You will need to create the back-end;s configuration file:
+You will need to create the back-end’s configuration file:
 
 .. code-block:: bash
 
@@ -213,3 +238,4 @@ Run the RabbitMQ consumer to handle incomming connection
 Rumal is licensed under the GPLv2 or later. Rumal releases also include and make use of other libraries with their own separate licenses.
 
 The license is available `here <https://github.com/pdelsante/rumal/blob/master/COPYING>`_.
+

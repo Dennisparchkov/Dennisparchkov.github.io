@@ -27,7 +27,7 @@ This requires a GeoPlugin.conf config file in /conf/plugins directory with the f
 	isp = False
 
 
-We use the `GeoLite2 Free database <http://dev.maxmind.com/geoip/geoip2/geolite2/>`_ from MaxMind. Download GeoLite2 City database and prived the absolute path to the mmdb file. 
+We use the `GeoLite2 Free database <http://dev.maxmind.com/geoip/geoip2/geolite2/>`_ from MaxMind. Download GeoLite2 City database and provide the absolute path to the mmdb file. 
 
 
 

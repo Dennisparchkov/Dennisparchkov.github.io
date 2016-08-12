@@ -100,6 +100,7 @@
 <li class="toctree-l1"><a class="reference internal" href="social.html">Rumal Social</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advancedsearch.html">Advanced Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
 </ul>
 
             
@@ -177,35 +178,27 @@ $ docker-compose build
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-compose up
 </pre></div>
 </div>
-<p>Your instance of rumal-thug is now ready to use.</p>
-<div class="line-block">
-<div class="line">Rumal back-end is running on (IP):8000/admin.</div>
-<div class="line">Rumal front-end will be running on (IP):8080.</div>
-</div>
+<p>Your instance of rumal is now ready to use.</p>
+<p>Rumal back-end is running on (IP):8000/admin.</p>
+<p>Rumal front-end will be running on (IP):8080.</p>
 </div>
 <div class="section" id="connection">
 <h2>Connection<a class="headerlink" href="#connection" title="Permalink to this headline">¶</a></h2>
 <p><strong>Windows:</strong></p>
 <p>On Windows the Docker daemon is inside a Linux VM. So to connect to it you need to find out this VM’s local IP address (which isn&#8217;t 127.0.0.1).</p>
-<div class="line-block">
-<div class="line">To find the IP address:</div>
-</div>
+<p>To find the IP address:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ docker-machine ip
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line">or</div>
-</div>
-<div class="line-block">
-<div class="line">The IP address displayed at the top of the Docker Quick start Terminal</div>
-</div>
+<p>or</p>
+<p>The IP address displayed at the top of the Docker Quick start Terminal</p>
 <p><strong>Ubuntu:</strong></p>
 <p>127.0.0.1:8080 should work to access Rumal.</p>
 <p><strong>Login:</strong></p>
-<div class="line-block">
-<div class="line">- Default user: admin</div>
-<div class="line">- Default password: admin</div>
-</div>
+<ul class="simple">
+<li>Default user: admin</li>
+<li>Default password: admin</li>
+</ul>
 </div>
 <div class="section" id="tests">
 <h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
@@ -233,7 +226,7 @@ $ docker-compose build
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015, Pietro Delsante, Tarun Kumar.
+        &copy; Copyright 2014-2016 Rumal Developers.
 
     </p>
   </div>

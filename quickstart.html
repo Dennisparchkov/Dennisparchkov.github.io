@@ -97,6 +97,7 @@
 <li class="toctree-l1"><a class="reference internal" href="social.html">Rumal Social</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advancedsearch.html">Advanced Search</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development.html">Development</a></li>
 </ul>
 
             
@@ -157,7 +158,7 @@
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Options</span><span class="p">:</span>
 
 <span class="n">Target</span> <span class="n">URL</span>              <span class="n">url</span> <span class="n">to</span> <span class="n">scan</span> <span class="p">(</span><span class="n">url</span> <span class="ow">in</span> <span class="n">Thug</span><span class="p">)</span>
-<span class="n">Referer</span>                 <span class="o">-</span><span class="n">r</span> <span class="ow">in</span> <span class="n">Thug</span> <span class="n">specifying</span> <span class="n">a</span> <span class="n">referer</span>
+<span class="n">Referrer</span>                <span class="o">-</span><span class="n">r</span> <span class="ow">in</span> <span class="n">Thug</span> <span class="n">specifying</span> <span class="n">a</span> <span class="n">referrer</span>
 <span class="n">User</span> <span class="n">Agent</span>              <span class="o">-</span><span class="n">u</span> <span class="ow">in</span> <span class="n">Thug</span> <span class="n">select</span> <span class="n">a</span> <span class="n">user</span> <span class="n">agent</span> <span class="kn">from</span> <span class="nn">list</span>
 <span class="n">Proxy</span>                   <span class="o">-</span><span class="n">p</span> <span class="ow">in</span> <span class="n">Thug</span> <span class="n">specify</span> <span class="n">a</span> <span class="n">proxy</span> <span class="p">(</span><span class="n">currently</span> <span class="n">noy</span> <span class="n">supported</span><span class="p">)</span>
 <span class="n">Backend</span> <span class="n">Choice</span>          <span class="n">backend</span> <span class="n">to</span> <span class="n">run</span> <span class="n">the</span> <span class="n">scan</span> <span class="n">on</span> <span class="ow">or</span> <span class="nb">any</span><span class="o">.</span>
@@ -165,7 +166,7 @@
 
 <span class="n">Advanced</span> <span class="n">Options</span><span class="p">:</span>
 
-<span class="n">Specified</span> <span class="n">Dom</span> <span class="n">events</span> <span class="n">handeling</span>                  <span class="o">-</span><span class="n">e</span> <span class="ow">in</span> <span class="n">Thug</span>
+<span class="n">Specified</span> <span class="n">Dom</span> <span class="n">events</span> <span class="n">handling</span>                   <span class="o">-</span><span class="n">e</span> <span class="ow">in</span> <span class="n">Thug</span>
 <span class="n">Maximum</span> <span class="n">setTimout</span><span class="o">/</span><span class="n">setInterval</span> <span class="n">delay</span> <span class="p">(</span><span class="n">ms</span><span class="p">)</span>        <span class="o">-</span><span class="n">w</span> <span class="ow">in</span> <span class="n">Thug</span>
 <span class="n">Analysis</span> <span class="n">timeout</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>                            <span class="o">-</span><span class="n">T</span> <span class="ow">in</span> <span class="n">Thug</span>
 <span class="n">Maximum</span> <span class="n">pages</span> <span class="n">to</span> <span class="n">fetch</span>                          <span class="o">-</span><span class="n">t</span> <span class="ow">in</span> <span class="n">Thug</span>
@@ -199,19 +200,22 @@
 <h2>Understanding the Results<a class="headerlink" href="#understanding-the-results" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/report.jpg" src="_images/report.jpg" />
 <ul class="simple">
-<li><strong>1:</strong> Panel that displays the scan tree produced by Thug. The orange node is the currently selected node, purple nodes can be double clicked to expand while blue nodes are leafs of the tree. Nodes can be selected by clicking on then. This panel is also used for the GeoPlugin to display location of IPs can be swicthed via the 8 button.</li>
+<li><strong>1:</strong> Panel that displays the scan tree produced by Thug. The orange node is the currently selected node, purple nodes can be double clicked to expand while blue nodes are leafs of the tree. Nodes can be selected by clicking on then. This panel is also used for the GeoPlugin to display location of IPs can be switched via the 8 button.</li>
 <li><strong>2:</strong> Basic information panel that gives the url and IP address of the currently selected node.</li>
-<li><strong>3:</strong> Samples, Codes and Plugins panels that contain data returned by Thug. These panels only display their data when hovered over my the mouse.</li>
-<li><strong>4:</strong> Tags are used to give single words or short text information describing a scan. This can help users identify key aspects of a scan. Suggestions are given to the user when typing a tag with all existing tags. For pulbic scans tags can be aded by everyone. If a scan is shared within a group, all group members can add tags to a scan.</li>
-<li><strong>5:</strong> Commenting on a node. You can add comments on the currently selected node, just select you node and click on this tab to view and post comments. The number of comments is displayed. Only authorised users can post comments, within public scans everyone can post a comment. But when shared within a group, only group memebers have access to this feature.</li>
+<li><strong>3:</strong> Samples, Codes and Plugins panels that contain data returned by Thug. These panels only display their data when hovered over by the mouse.</li>
+<li><strong>4:</strong> Tags are used to give single words or short text information describing a scan. This can help users identify key aspects of a scan. Suggestions are given to the user when typing a tag with all existing tags. For public scans, tags can be added by everyone. If a scan is shared within a group, all group members can add tags to a scan.</li>
+<li><strong>5:</strong> Commenting on a node. You can add comments on the currently selected node, just select you node and click on this tab to view and post comments. The number of comments is displayed. Only authorised users can post comments, within public scans everyone can post a comment. But when shared within a group, only group members have access to this feature.</li>
 <li><strong>6:</strong> This tab allows the owner of the scan to change the sharing model and shred groups options of a scan.</li>
 <li><strong>7:</strong> Bookmarking a scan. Displayed in My Scans</li>
-<li><strong>8:</strong> Swicth to Geoplugin. Panel 1 changes to display a Map of all IPs present within the tree.</li>
+<li><strong>8:</strong> Switch to Geoplugin. Panel 1 changes to display a Map of all IPs present within the tree.</li>
 </ul>
 </div>
 <div class="section" id="my-scans">
 <h2>My Scans<a class="headerlink" href="#my-scans" title="Permalink to this headline">¶</a></h2>
-<p>Rumal also allows you to see all your previous scans. Previous scans are acessible by clicking on the MyScans tab. All your scans are displayed here as well as all your bookmarked scans.</p>
+<p>Rumal also allows you to see all your previous scans. Previous scans are accessible by clicking on the MyScans tab. All your scans are displayed here as well as all your bookmarked scans.</p>
+<img alt="_images/myscans.jpg" src="_images/myscans.jpg" />
+<p><a class="reference external" href="https://datatables.net/">JQuery DataTables</a> is used for displaying list of scans (also used within groups pages and advanced searches). A useful feature of DataTables provides users with the ability to filter and search the list.</p>
+<p>.</p>
 </div>
 </div>
 
@@ -234,7 +238,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2015, Pietro Delsante, Tarun Kumar.
+        &copy; Copyright 2014-2016 Rumal Developers.
 
     </p>
   </div>

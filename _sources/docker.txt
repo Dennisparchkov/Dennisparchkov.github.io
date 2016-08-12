@@ -50,10 +50,11 @@ The following command will create rumaldocker_backend_1 and rumaldocker_frontend
     $ docker-compose up 
 
 
-Your instance of rumal-thug is now ready to use.
+Your instance of rumal is now ready to use.
 
-| Rumal back-end is running on (IP):8000/admin.
-| Rumal front-end will be running on (IP):8080.
+Rumal back-end is running on (IP):8000/admin.
+
+Rumal front-end will be running on (IP):8080.
 
 
 Connection
@@ -63,15 +64,15 @@ Connection
 
 On Windows the Docker daemon is inside a Linux VM. So to connect to it you need to find out this VM’s local IP address (which isn't 127.0.0.1).
 
-| To find the IP address: 
+To find the IP address: 
 
 .. code-block:: bash
 
     $ docker-machine ip
 
-| or
+or
 
-| The IP address displayed at the top of the Docker Quick start Terminal
+The IP address displayed at the top of the Docker Quick start Terminal
 
 **Ubuntu:**
 
@@ -79,8 +80,8 @@ On Windows the Docker daemon is inside a Linux VM. So to connect to it you need 
 
 **Login:** 
 
-| - Default user: admin
-| - Default password: admin
+- Default user: admin
+- Default password: admin
 
 
 Tests
@@ -89,3 +90,4 @@ Tests
 This has been tested on :
 
 Ubuntu 16.04 Desktop / Docker version 1.11.0
+
