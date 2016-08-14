@@ -1,34 +1,46 @@
+.. GSoC Rumal documentation master file, created by
+   sphinx-quickstart on Thu Aug 11 23:33:40 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-Welcome to Rumal's documentation!
-=================================
+GSoC Rumal's Work Product
+======================================
 
-From Wikipedia, the free encyclopedia:
-    
-    A rumāl is a piece of clothing similar to a handkerchief or bandana. [...] The rumāl was used by the Thugs in India as a method of strangulation. A coin was knotted in one end of the scarf, and would be swung around the neck of the victim; who would then be strangled in the most brutal and abhorrent manner.
-    
-This project aims to be `Thug <http://buffer.github.io/thug/>`_’s dress - providing a convenient web GUI - but also its weapon, as it should provide a set of tools that should enrich Thug’s output with new metadata and allow for correlation of results.
+*Created by Dennis Parchkov*
+
+`Github Account <https://github.com/Dennisparchkov>`_
+
+Purpose
+----------
+Rumal part 2 was proposed during the 2016 GSoC program with the purpose of tweaking and adding new features to the successful 2015 Rumal project.
+
+Rumal is basically a platform trying to present visually complex data retuned by Thug, a tool used to study exploit kits. With a goal of identifying malicious websites. 
+A number of task were initially proposed for this project:
+
+- Introduce a docker container for running and testing Rumal.
+- Replace the use of subprocess module to launch thug in a dockerized environment to use Docker’s python API.
+- Fixing know issues with Rumal Front-end (JavaScript, HTML).
+- Modifying the current REST API communication system between front-end and back-end with a messaging queue system (RabbitMQ).
+- Implementing collaborative elements into Rumal 
+
+The final product of this year’s GSoC project is a ready to run Docker instance of Rumal, used to test out the platform. 
+
+The following is the status of the Rumal project at the end of the GSoC period. Here you will find what has been achieved over the summer of 2016, links to commits and finally what possible future developments we see for the development of this platform.  
 
 
-While it is perfectly possible to use it as a simple web GUI for Thug on your own computer, with you as the only user, Rumāl has been designed to support multi-user environments, where a single back-end can serve to multiple front-ends. Also, work is in progress to extend Rumal so that that you can comfortably share your results, settings, etc. resulting in easy collaboration with other users.
+Appreciations
+---------------
 
 
+Firstly, I would like to express my sincere gratitude to all my mentors Pietro Delsante, Tarun Kumar, Fedele Mantuano, Andrea De Pasquale for their continuous support, for their feedback and immense knowledge. Their guidance helped me in all the time for this project. I could not have imagined having a better mentors to help me. 
 
-User Guide:
------------
+Contents:
 
 .. toctree::
    :maxdepth: 2
-   
-   intro
-   architecture
-   install
-   docker
-   quickstart
-   advancedusage
-   social
-   advancedsearch
-   plugins
-   development
 
+   work
+   commits
+   future
 
 

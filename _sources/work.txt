@@ -1,0 +1,84 @@
+What Work has Been Done
+=============================
+
+
+Rumal Docker
+--------------
+
+A working version of rumal_docker can now be easily installed to test the platform. This only requires you to have Docker installed on your system. Documentation on installing Rumal Docker can be found `here <http://thugs-rumal.github.io>`_.
+
+
+Docker Python API to Replace Subprocces
+--------------------------------------------
+
+Subproccess popen module that was originally used for launching docker scans is currently the most viable option. Docker-py has limitations in controlling docker containers as certain options cannot be used such as --rm. 
+
+It is not officially supported by docker and lacks clear and up to date documentations. Error messages can sometimes be very vague. More information about docker-py’s limitation can be found `this <http://blog.bordage.pro/avoid-docker-py/>`_ link.
+
+
+RabbitMQ Communication System
+-------------------------------
+
+A prototype communication system has been implemented using RabbitMQ and the pika python library. This communication system has been developed to handle the issues with distributed multiple backend/frontends, and specifically these problems:
+
+- Is it possible to have multiple consumers (backends) and a single frontend?
+- Is it possible to choose what backend you want to use?
+- Would it be possible to have multiple publishers (frontends) as well?
+
+
+When running a new scan you can now select which backend you want to run the scan on, which will send this scan via a private queue to the backend you specified. If you have no preference on which backend to runs the scan you can select ANY option which will place it on a public queue and to be picked up by the 1st available backend.
+
+A list of backends and the location of the public ANY queue is specified on the frontend backend.conf file. 
+
+
+Issues Fixed
+-----------------
+
+
+**Front-end:**
+
+- `No connection adapters were found for http://backend:8000"/api/v1/task/ <https://github.com/thugs-rumal/rumal/issues/30>`_
+- `Myscans maximum showed scans limited to 20 results  <https://github.com/thugs-rumal/rumal/issues/29>`_
+- `My Scans page: Incorrect href values in table of starred scans  <https://github.com/thugs-rumal/rumal/issues/26>`_
+- `Auto-scroll Up in Panels  <https://github.com/thugs-rumal/rumal/issues/22>`_
+- `fdaemon: fix urljoin() to be more robust  <https://github.com/thugs-rumal/rumal/issues/17>`_
+- `Results page: Change default behavior of panels/boxes  <https://github.com/thugs-rumal/rumal/issues/13>`_
+
+**Back-end:**
+
+- `Moving Task Status Constants to Utils  <https://github.com/thugs-rumal/rumal_back/issues/12>`_
+- `Missing Exception Handling for Hostname Resolution Failure  <https://github.com/thugs-rumal/rumal_back/issues/7>`_
+
+
+
+
+
+Advanced Search
+----------------
+
+This feature was proposed latter on. Its idea was to provide an easy way to build complex search queries for locating specific scans. 
+
+The advanced search is used to search with the document returned by Thug. Its uses pyparsing to build to abstract syntax tree from the grammar and build the corresponding mongo dB query. Queries are built by providing a field to query from, an operator and a value, or just a value. In this case all text fields will be searched. Associating them with and/or’s and parentheses will create complex queries. Currently the mongo fields that are allowed to query from are url, urls, tags, timestamp and id. Operators supported are = (contains), == (exact match), ~ (regex), >, >=, <, <=.
+
+
+
+Rumal Social
+----------------
+
+The collaborative tools built during this year’s GSoC are:
+
+- Functional public, private and group scans
+- Creating and managing groups 
+- Commenting on analysis tree nodes
+- Creating tags for scans. 
+
+
+
+Documentation 
+---------------
+
+
+To support Rumal's development, a GitHub page was created for reference on Rumals architecture, installation and use. This documentation can be found `on this link <https://thugs-rumal.github.io>`_.
+
+
+

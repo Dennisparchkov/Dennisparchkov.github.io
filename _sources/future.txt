@@ -1,0 +1,9 @@
+Future Developments
+===============================
+
+Any ideas for future development is Welcome, but here are a couple that we have in mind:
+
+
+- **Plugin development:** The current plugin architecture allows developers to create their own enrichment of Thug’s data but no way of displaying them. There needs to be a way of providing a way for developers to decide how to display their enriched data.
+- **Auto discovery of back-ends:** Some sort of auto discovery needs to be implemented so that you can link back-ends to front-ends.
+- **Similar Comments:** When viewing comments on a node (URL, IP address), a feature that might be useful would be displaying comments from a similar URL or exact IP address.

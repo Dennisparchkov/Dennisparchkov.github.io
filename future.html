@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; GSoC Rumal 1.0 documentation</title>
+  <title>Future Developments &mdash; GSoC Rumal 1.0 documentation</title>
   
 
   
@@ -30,7 +30,8 @@
   
 
   
-    <link rel="top" title="GSoC Rumal 1.0 documentation" href="index.html"/> 
+    <link rel="top" title="GSoC Rumal 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="Commits" href="commits.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -65,7 +66,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -79,10 +80,10 @@
           
             
             
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="work.html">What Work has Been Done</a></li>
 <li class="toctree-l1"><a class="reference internal" href="commits.html">Commits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="future.html">Future Developments</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Future Developments</a></li>
 </ul>
 
             
@@ -105,7 +106,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -113,8 +114,10 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Future Developments</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
         
       </li>
   </ul>
@@ -123,23 +126,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="future-developments">
+<h1>Future Developments<a class="headerlink" href="#future-developments" title="Permalink to this headline">¶</a></h1>
+<p>Any ideas for future development is Welcome, but here are a couple that we have in mind:</p>
+<ul class="simple">
+<li><strong>Plugin development:</strong> The current plugin architecture allows developers to create their own enrichment of Thug’s data but no way of displaying them. There needs to be a way of providing a way for developers to decide how to display their enriched data.</li>
+<li><strong>Auto discovery of back-ends:</strong> Some sort of auto discovery needs to be implemented so that you can link back-ends to front-ends.</li>
+<li><strong>Similar Comments:</strong> When viewing comments on a node (URL, IP address), a feature that might be useful would be displaying comments from a similar URL or exact IP address.</li>
+</ul>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="commits.html" class="btn btn-neutral" title="Commits" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -177,7 +184,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -193,14 +199,7 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

@@ -1,0 +1,14 @@
+Commits
+=========
+
+
+List of my commits per repository
+----------------------------------------
+
+- `Rumal Front-end <https://github.com/thugs-rumal/rumal/commits/master?author=Dennisparchkov>`_
+
+- `Rumal Back-end <https://github.com/thugs-rumal/rumal_back/commits/master?author=Dennisparchkov>`_
+
+- `Rumal Docker <https://github.com/thugs-rumal/rumal_docker/commits/master?author=Dennisparchkov>`_
+
+- `Rumal Documentation <https://github.com/thugs-rumal/thugs-rumal.github.io/commits/master?author=Dennisparchkov>`_
