@@ -149,7 +149,7 @@
 </div>
 <div class="section" id="rabbitmq-communication-system">
 <h2>RabbitMQ Communication System<a class="headerlink" href="#rabbitmq-communication-system" title="Permalink to this headline">¶</a></h2>
-<p>A prototype communication system has been implemented using RabbitMQ and the pika python library. This communication system has been developed to handle the issues with distributed multiple backend/frontends, and specifically these problems:</p>
+<p>The current REST API has been replaced with RabbitMQ queue messaging system using the pika python library. This communication system has been developed to handle the issues with distributed multiple backend/frontends, and specifically these problems:</p>
 <ul class="simple">
 <li>Is it possible to have multiple consumers (backends) and a single frontend?</li>
 <li>Is it possible to choose what backend you want to use?</li>
@@ -157,6 +157,7 @@
 </ul>
 <p>When running a new scan you can now select which backend you want to run the scan on, which will send this scan via a private queue to the backend you specified. If you have no preference on which backend to runs the scan you can select ANY option which will place it on a public queue and to be picked up by the 1st available backend.</p>
 <p>A list of backends and the location of the public ANY queue is specified on the frontend backend.conf file.</p>
+<p>You can find more information on the communication architecture used including diagrams and explanations in our <a class="reference external" href="http://thugs-rumal.github.io/architecture.html">Rumal documentation</a>.</p>
 </div>
 <div class="section" id="issues-fixed">
 <h2>Issues Fixed<a class="headerlink" href="#issues-fixed" title="Permalink to this headline">¶</a></h2>
@@ -177,7 +178,7 @@
 </div>
 <div class="section" id="advanced-search">
 <h2>Advanced Search<a class="headerlink" href="#advanced-search" title="Permalink to this headline">¶</a></h2>
-<p>This feature was proposed latter on. Its idea was to provide an easy way to build complex search queries for locating specific scans.</p>
+<p>This feature was proposed later on. Its idea was to provide an easy way to build complex search queries for locating specific scans.</p>
 <p>The advanced search is used to search with the document returned by Thug. Its uses pyparsing to build to abstract syntax tree from the grammar and build the corresponding mongo dB query. Queries are built by providing a field to query from, an operator and a value, or just a value. In this case all text fields will be searched. Associating them with and/or’s and parentheses will create complex queries. Currently the mongo fields that are allowed to query from are url, urls, tags, timestamp and id. Operators supported are = (contains), == (exact match), ~ (regex), &gt;, &gt;=, &lt;, &lt;=.</p>
 </div>
 <div class="section" id="rumal-social">

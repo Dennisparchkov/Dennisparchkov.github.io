@@ -19,7 +19,7 @@ It is not officially supported by docker and lacks clear and up to date document
 RabbitMQ Communication System
 -------------------------------
 
-A prototype communication system has been implemented using RabbitMQ and the pika python library. This communication system has been developed to handle the issues with distributed multiple backend/frontends, and specifically these problems:
+The current REST API has been replaced with RabbitMQ queue messaging system using the pika python library. This communication system has been developed to handle the issues with distributed multiple backend/frontends, and specifically these problems:
 
 - Is it possible to have multiple consumers (backends) and a single frontend?
 - Is it possible to choose what backend you want to use?
@@ -30,6 +30,7 @@ When running a new scan you can now select which backend you want to run the sca
 
 A list of backends and the location of the public ANY queue is specified on the frontend backend.conf file. 
 
+You can find more information on the communication architecture used including diagrams and explanations in our `Rumal documentation <http://thugs-rumal.github.io/architecture.html>`_.
 
 Issues Fixed
 -----------------
@@ -56,7 +57,7 @@ Issues Fixed
 Advanced Search
 ----------------
 
-This feature was proposed latter on. Its idea was to provide an easy way to build complex search queries for locating specific scans. 
+This feature was proposed later on. Its idea was to provide an easy way to build complex search queries for locating specific scans. 
 
 The advanced search is used to search with the document returned by Thug. Its uses pyparsing to build to abstract syntax tree from the grammar and build the corresponding mongo dB query. Queries are built by providing a field to query from, an operator and a value, or just a value. In this case all text fields will be searched. Associating them with and/or’s and parentheses will create complex queries. Currently the mongo fields that are allowed to query from are url, urls, tags, timestamp and id. Operators supported are = (contains), == (exact match), ~ (regex), >, >=, <, <=.
 
