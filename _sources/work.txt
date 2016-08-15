@@ -19,7 +19,7 @@ It is not officially supported by docker and lacks clear and up to date document
 RabbitMQ Communication System
 -------------------------------
 
-The current REST API has been replaced with RabbitMQ queue messaging system using the pika python library. This communication system has been developed to handle the issues with distributed multiple backend/frontends, and specifically these problems:
+The previous REST API has been replaced with RabbitMQ queue messaging system using the pika python library. This communication system has been developed to handle the issues with distributed multiple backend/frontends, and specifically these problems:
 
 - Is it possible to have multiple consumers (backends) and a single frontend?
 - Is it possible to choose what backend you want to use?
