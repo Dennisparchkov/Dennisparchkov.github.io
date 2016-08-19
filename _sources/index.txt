@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-GSoC Rumal's Work Product
+2016 GSoC Rumal's Work Product
 ======================================
 
 *Created by Dennis Parchkov*
@@ -14,7 +14,14 @@ Purpose
 ----------
 Rumal part 2 was proposed during the 2016 GSoC program with the purpose of tweaking and adding new features to the successful 2015 Rumal project.
 
-Rumal is basically a platform trying to present visually complex data retuned by Thug, a tool used to study exploit kits. With a goal of identifying malicious websites. 
+Rumal is basically a platform trying to present visually complex data retuned by Thug, a tool used to study exploit kits. With a goal of identifying malicious websites.
+
+It is built following this architecture:
+
+.. image:: nstatic/arch.png
+
+A more complete explanation on Rumal’s architecture can be found in `Rumal’s documentation <https://thugs-rumal.github.io>`_.
+
 A number of task were initially proposed for this project:
 
 - Introduce a docker container for running and testing Rumal.
@@ -25,14 +32,14 @@ A number of task were initially proposed for this project:
 
 The final product of this year’s GSoC project is a ready to run Docker instance of Rumal, used to test out the platform. 
 
-The following is the status of the Rumal project at the end of the GSoC period. Here you will find what has been achieved over the summer of 2016, links to commits and finally what possible future developments we see for the development of this platform.  
+The following is a summary of the Rumal project at the end of the 2016 GSoC period. Here you will find what has been achieved over the summer of 2016, links to commits and finally what possible future developments we see for the development of this platform.  
 
 
 Appreciations
 ---------------
 
 
-Firstly, I would like to express my sincere gratitude to all my mentors Pietro Delsante, Tarun Kumar, Fedele Mantuano, Andrea De Pasquale for their continuous support, for their feedback and immense knowledge. Their guidance helped me in all the time for this project. I could not have imagined having a better mentors to help me. 
+Firstly, I would like to express my sincere gratitude to all my mentors Pietro Delsante, Tarun Kumar, Fedele Mantuano, Andrea De Pasquale for their continuous support, for their feedback and immense knowledge. Their guidance helped me in all the time for this project. I could not have imagined having better mentors to help me. 
 
 Contents:
 

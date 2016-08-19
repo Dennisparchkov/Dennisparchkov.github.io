@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>What Work has Been Done &mdash; GSoC Rumal 1.0 documentation</title>
+  <title>Summary &mdash; GSoC Rumal 1.0 documentation</title>
   
 
   
@@ -82,7 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">What Work has Been Done</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Summary</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#rumal-docker">Rumal Docker</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#docker-python-api-to-replace-subprocces">Docker Python API to Replace Subprocces</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rabbitmq-communication-system">RabbitMQ Communication System</a></li>
@@ -124,7 +124,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>What Work has Been Done</li>
+    <li>Summary</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -136,8 +136,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="what-work-has-been-done">
-<h1>What Work has Been Done<a class="headerlink" href="#what-work-has-been-done" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="rumal-docker">
 <h2>Rumal Docker<a class="headerlink" href="#rumal-docker" title="Permalink to this headline">¶</a></h2>
 <p>A working version of rumal_docker can now be easily installed to test the platform. This only requires you to have Docker installed on your system. Documentation on installing Rumal Docker can be found <a class="reference external" href="http://thugs-rumal.github.io">here</a>.</p>
@@ -179,10 +179,13 @@
 <div class="section" id="advanced-search">
 <h2>Advanced Search<a class="headerlink" href="#advanced-search" title="Permalink to this headline">¶</a></h2>
 <p>This feature was proposed later on. Its idea was to provide an easy way to build complex search queries for locating specific scans.</p>
-<p>The advanced search is used to search with the document returned by Thug. Its uses pyparsing to build to abstract syntax tree from the grammar and build the corresponding mongo dB query. Queries are built by providing a field to query from, an operator and a value, or just a value. In this case all text fields will be searched. Associating them with and/or’s and parentheses will create complex queries. Currently the mongo fields that are allowed to query from are url, urls, tags, timestamp and id. Operators supported are = (contains), == (exact match), ~ (regex), &gt;, &gt;=, &lt;, &lt;=.</p>
+<p>It is used to search within the document returned by Thug. It uses pyparsing to build a abstract syntax tree from the grammar and build the corresponding mongo dB query. Queries are built by providing a field to query from, an operator and a value, or just a value. In the latter case all text fields will be searched. Associating them with and/or’s and parentheses will create complex queries. Currently the mongo fields that are allowed to query from are url, urls, tags, timestamp and id. Operators supported are = (contains), == (exact match), ~ (regex), &gt;, &gt;=, &lt;, &lt;=.</p>
 </div>
 <div class="section" id="rumal-social">
 <h2>Rumal Social<a class="headerlink" href="#rumal-social" title="Permalink to this headline">¶</a></h2>
+<p>A couple of elements have been integrated for proving the social network in Rumal. This is where Rumal becomes a really powerful tool.</p>
+<p>Thug’s analysis may be complex to understand and the elements that we provide can be used to show the most important information out of a scan without the effort of going deep within Thugs output.</p>
+<p>You can create groups and share scans within them, keep scans to yourself or release the scan publicly so anyone can contribute.</p>
 <p>The collaborative tools built during this year’s GSoC are:</p>
 <ul class="simple">
 <li>Functional public, private and group scans</li>

@@ -1,6 +1,5 @@
-What Work has Been Done
-=============================
-
+Summary
+=========
 
 Rumal Docker
 --------------
@@ -59,12 +58,19 @@ Advanced Search
 
 This feature was proposed later on. Its idea was to provide an easy way to build complex search queries for locating specific scans. 
 
-The advanced search is used to search with the document returned by Thug. Its uses pyparsing to build to abstract syntax tree from the grammar and build the corresponding mongo dB query. Queries are built by providing a field to query from, an operator and a value, or just a value. In this case all text fields will be searched. Associating them with and/or’s and parentheses will create complex queries. Currently the mongo fields that are allowed to query from are url, urls, tags, timestamp and id. Operators supported are = (contains), == (exact match), ~ (regex), >, >=, <, <=.
+It is used to search within the document returned by Thug. It uses pyparsing to build a abstract syntax tree from the grammar and build the corresponding mongo dB query. Queries are built by providing a field to query from, an operator and a value, or just a value. In the latter case all text fields will be searched. Associating them with and/or’s and parentheses will create complex queries. Currently the mongo fields that are allowed to query from are url, urls, tags, timestamp and id. Operators supported are = (contains), == (exact match), ~ (regex), >, >=, <, <=.
 
 
 
 Rumal Social
 ----------------
+
+A couple of elements have been integrated for proving the social network in Rumal. This is where Rumal becomes a really powerful tool. 
+
+Thug’s analysis may be complex to understand and the elements that we provide can be used to show the most important information out of a scan without the effort of going deep within Thugs output.
+ 
+You can create groups and share scans within them, keep scans to yourself or release the scan publicly so anyone can contribute. 
+
 
 The collaborative tools built during this year’s GSoC are:
 
